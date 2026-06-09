@@ -17,14 +17,14 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        User::create([
             'name' => 'Administrador',
             'email' => 'admin@ahumadosrym.com',
             'password' => bcrypt('password'),
             'role' => 'admin',
         ]);
 
-        User::factory()->create([
+        User::create([
             'name' => 'Cliente',
             'email' => 'cliente@ahumadosrym.com',
             'password' => bcrypt('password'),
