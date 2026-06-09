@@ -106,7 +106,15 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // ES: Marcar queja como resuelta / EN: Mark a complaint as resolved
     Route::put('claims/{claim}/resolve', [\App\Http\Controllers\Admin\AdminClaimController::class, 'resolve'])->name('claims.resolve');
     
-    // Panel de Producción (UI para prototipos / capturas)
     Route::view('production', 'admin.production')->name('production.index');
 });
 
+// Ruta mágica para Render (como no tienes acceso al shell en la capa gratuita)
+Route::get('/instalar-bd', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('migrate:fresh', ['--force' => true, '--seed' => true]);
+        return "¡Base de datos instalada y poblada con éxito! Ya puedes entrar al sistema.";
+    } catch (\Exception $e) {
+        return "Error al instalar: " . $e->getMessage();
+    }
+});
