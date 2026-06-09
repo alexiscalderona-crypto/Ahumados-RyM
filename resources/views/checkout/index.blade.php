@@ -36,11 +36,32 @@
         
         <div class="bg-white shadow rounded-lg p-6">
             <h2 class="text-2xl font-bold mb-4">Método de Pago</h2>
-            <div class="border border-gray-300 rounded p-4 flex items-center gap-4 mb-4 bg-gray-50 cursor-pointer">
-                <input type="radio" name="payment_method" checked class="text-primary">
-                <span class="font-bold">Pago a contra entrega</span>
+            
+            <label class="border border-gray-300 rounded p-4 flex items-center gap-4 mb-4 hover:bg-gray-50 cursor-pointer">
+                <input type="radio" name="payment_method" value="contra_entrega" checked class="text-primary h-5 w-5" onchange="document.getElementById('yape-section').classList.add('hidden')">
+                <span class="font-bold text-lg">Pago a contra entrega</span>
+            </label>
+            
+            <label class="border border-gray-300 rounded p-4 flex items-center gap-4 mb-4 hover:bg-gray-50 cursor-pointer">
+                <input type="radio" name="payment_method" value="yape" class="text-primary h-5 w-5" onchange="document.getElementById('yape-section').classList.remove('hidden')">
+                <span class="font-bold text-lg text-purple-700 flex items-center gap-2">
+                    Transferencia / Yape
+                    <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Recomendado</span>
+                </span>
+            </label>
+
+            <!-- Yape Section -->
+            <div id="yape-section" class="hidden mt-4 p-4 border border-purple-200 bg-purple-50 rounded-lg">
+                <h3 class="font-bold text-purple-800 mb-2">Instrucciones de Pago:</h3>
+                <p class="text-sm text-gray-700 mb-4">1. Escanea el código QR o transfiere al número <strong>987 654 321</strong> (Titular: Ahumados R y M).</p>
+                <div class="flex justify-center mb-4">
+                    <div class="w-32 h-32 bg-purple-200 border-2 border-dashed border-purple-400 flex items-center justify-center rounded-lg">
+                        <span class="text-purple-600 font-bold text-sm text-center">Código QR<br>de Yape</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-700 mb-2">2. Adjunta la captura de pantalla de tu transferencia:</p>
+                <input type="file" name="voucher" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-100 file:text-purple-700 hover:file:bg-purple-200">
             </div>
-            <p class="text-sm text-gray-500">Pronto habilitaremos pagos con tarjeta de crédito y QR.</p>
         </div>
     </div>
     

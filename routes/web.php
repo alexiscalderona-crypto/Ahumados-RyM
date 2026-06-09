@@ -105,5 +105,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('claims', [\App\Http\Controllers\Admin\AdminClaimController::class, 'index'])->name('claims.index');
     // ES: Marcar queja como resuelta / EN: Mark a complaint as resolved
     Route::put('claims/{claim}/resolve', [\App\Http\Controllers\Admin\AdminClaimController::class, 'resolve'])->name('claims.resolve');
+    
+    // Panel de Producción (UI para prototipos / capturas)
+    Route::view('production', 'admin.production')->name('production.index');
 });
 
