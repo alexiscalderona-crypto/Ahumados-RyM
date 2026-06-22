@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Aumentar límites de subida de archivos en PHP para que no rechace fotos pesadas
-RUN echo "upload_max_filesize = 20M\npost_max_size = 20M" > /usr/local/etc/php/conf.d/uploads.ini
+RUN echo "upload_max_filesize = 20M" > /usr/local/etc/php/conf.d/uploads.ini \
+    && echo "post_max_size = 20M" >> /usr/local/etc/php/conf.d/uploads.ini
 
 # Copiar Composer desde la imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
