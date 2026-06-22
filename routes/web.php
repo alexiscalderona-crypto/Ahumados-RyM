@@ -135,3 +135,13 @@ Route::get('/cargar-productos-reales', function () {
         return "Error: " . $e->getMessage();
     }
 });
+
+// Ruta para solucionar el problema de las imágenes en Render
+Route::get('/link-storage', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('storage:link');
+        return "Enlace de imágenes (storage link) creado exitosamente. Las imágenes rotas ahora deberían verse.";
+    } catch (\Exception $e) {
+        return "Error al crear enlace: " . $e->getMessage();
+    }
+});
