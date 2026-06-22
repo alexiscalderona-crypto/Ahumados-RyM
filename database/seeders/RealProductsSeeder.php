@@ -10,7 +10,9 @@ class RealProductsSeeder extends Seeder
 {
     public function run(): void
     {
-        // Limpiar productos y categorías anteriores
+        // Limpiar pedidos, productos y categorías anteriores
+        \App\Models\OrderItem::query()->delete();
+        \App\Models\Order::query()->delete();
         Product::query()->delete();
         Category::query()->delete();
 
