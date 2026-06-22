@@ -27,7 +27,7 @@ class AdminProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'image' => 'required|image|max:2048',
+            'image' => 'required|image|max:20480',
         ]);
 
         $imagePath = $request->file('image')->store('products', 'public');
@@ -56,7 +56,7 @@ class AdminProductController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|max:20480',
         ]);
 
         $product->title = $validated['title'];

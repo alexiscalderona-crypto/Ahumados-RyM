@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y \
 # Habilitar mod_rewrite de Apache para las URLs de Laravel
 RUN a2enmod rewrite
 
+# Aumentar límites de subida de archivos en PHP para que no rechace fotos pesadas
+RUN echo "upload_max_filesize = 20M\npost_max_size = 20M" > /usr/local/etc/php/conf.d/uploads.ini
+
 # Copiar Composer desde la imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
