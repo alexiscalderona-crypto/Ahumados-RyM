@@ -90,11 +90,15 @@
             <p class="font-headline-sm text-2xl text-white/90 mb-12 max-w-2xl mx-auto italic">Tradición y exclusividad en cada bocado.</p>
             <div class="flex flex-col md:flex-row gap-4 justify-center">
                 <a href="{{ route('products.index') }}" class="bg-white text-primary px-12 py-4 rounded-lg font-label-lg font-bold hover:bg-primary-container hover:text-on-primary-container transition-all shadow-xl active:scale-95 inline-block uppercase tracking-wide">Comprar Ahora</a>
-                <button class="border border-white/30 text-white px-12 py-4 rounded-lg font-label-lg font-bold hover:bg-white/10 transition-all backdrop-blur-sm active:scale-95 uppercase tracking-wide">Nuestra Historia</button>
             </div>
         </div>
     </section>
 
+    {{-- 
+    ======================================================================
+    SECCIÓN CATEGORÍAS (OCULTA TEMPORALMENTE)
+    Descomentar cuando la dueña decida activar las categorías.
+    ======================================================================
     <!-- Categories / Bento Grid -->
     <section class="py-20 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
@@ -121,6 +125,7 @@
             </div>
         </div>
     </section>
+    --}}
 
     <!-- Beneficios -->
     <section class="py-20 bg-inverse-surface text-inverse-on-surface">

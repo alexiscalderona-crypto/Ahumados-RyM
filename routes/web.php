@@ -118,3 +118,17 @@ Route::get('/instalar-bd', function () {
         return "Error al instalar: " . $e->getMessage();
     }
 });
+
+// Ruta temporal: Cargar los 12 productos reales sin borrar la BD completa
+// NOTA: Eliminar esta ruta después de usarla
+Route::get('/cargar-productos-reales', function () {
+    try {
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'Database\\Seeders\\RealProductsSeeder',
+            '--force' => true,
+        ]);
+        return "¡12 productos reales cargados exitosamente! Ve a /admin/products para agregar descripción y fotos.";
+    } catch (\Exception $e) {
+        return "Error: " . $e->getMessage();
+    }
+});
