@@ -31,6 +31,9 @@ WORKDIR /var/www/html
 # Instalar las dependencias de Laravel
 RUN composer install --no-dev --optimize-autoloader
 
+# Crear el enlace simbólico para que las imágenes sean públicas
+RUN php artisan storage:link
+
 # Dar permisos a las carpetas de Laravel
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
