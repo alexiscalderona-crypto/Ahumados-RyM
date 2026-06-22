@@ -119,7 +119,7 @@
                 <div class="flex justify-between items-start relative z-10">
                     <div>
                         <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Ventas (Pagadas)</p>
-                        <h2 class="text-3xl font-bold text-gray-800">${{ number_format($totalSales, 2) }}</h2>
+                        <h2 class="text-3xl font-bold text-gray-800">S/. {{ number_format($totalSales, 2) }}</h2>
                     </div>
                     <div class="bg-green-50 p-2 rounded-lg text-green-600">
                         <span class="material-symbols-outlined">payments</span>
@@ -183,7 +183,7 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 text-gray-500 text-sm">{{ $order->created_at->format('M d, Y') }}</td>
-                            <td class="px-6 py-4 font-bold text-gray-800">${{ number_format($order->total, 2) }}</td>
+                            <td class="px-6 py-4 font-bold text-gray-800">S/. {{ number_format($order->total, 2) }}</td>
                             <td class="px-6 py-4">
                                 @if($order->status == 'pending')
                                     <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold">Pending</span>
