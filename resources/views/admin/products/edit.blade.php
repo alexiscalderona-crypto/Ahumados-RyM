@@ -61,7 +61,7 @@
             <div>
                 <label class="block font-bold mb-2">Imagen del Producto</label>
                 <div class="flex items-center gap-4 mb-3">
-                    <img src="{{ Str::startsWith($product->image_path, ['http', 'data:image']) ? $product->image_path : asset($product->image_path) }}" class="w-20 h-20 object-cover rounded border border-gray-300">
+                    <img src="{{ Str::startsWith($product->image_path, 'http') ? $product->image_path : asset($product->image_path) }}" class="w-20 h-20 object-cover rounded border border-gray-300">
                     <span class="text-sm text-gray-500">Imagen Actual</span>
                 </div>
                 <input type="file" name="image" accept="image/*" class="w-full border border-gray-300 rounded p-3 bg-gray-50">
