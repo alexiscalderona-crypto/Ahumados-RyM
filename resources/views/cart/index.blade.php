@@ -23,8 +23,9 @@
                     @foreach($cart as $id => $details)
                     <tr class="border-b">
                         <td class="py-4 flex items-center gap-4">
-                            @if(isset($details['image_path']))
-                                <img src="{{ $details['image_path'] }}" alt="{{ $details['title'] }}" class="w-16 h-16 object-cover rounded">
+                            @php $cartProduct = \App\Models\Product::find($id); @endphp
+                            @if($cartProduct && $cartProduct->image_path)
+                                <img src="{{ $cartProduct->image_path }}" alt="{{ $details['title'] }}" class="w-16 h-16 object-cover rounded">
                             @else
                                 <div class="w-16 h-16 bg-gray-200 rounded"></div>
                             @endif

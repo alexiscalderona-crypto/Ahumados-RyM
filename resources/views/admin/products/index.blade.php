@@ -53,7 +53,7 @@
                     @foreach($products as $product)
                     <tr class="hover:bg-gray-50">
                         <td class="px-6 py-4">
-                            <img src="{{ Str::startsWith($product->image_path, 'http') ? $product->image_path : asset($product->image_path) }}" class="w-16 h-16 object-cover rounded">
+                            <img src="{{ Str::startsWith($product->image_path, ['http', 'data:']) ? $product->image_path : asset($product->image_path) }}" class="w-16 h-16 object-cover rounded">
                         </td>
                         <td class="px-6 py-4 font-bold">{{ $product->title }}</td>
                         <td class="px-6 py-4">S/. {{ number_format($product->price, 2) }}</td>

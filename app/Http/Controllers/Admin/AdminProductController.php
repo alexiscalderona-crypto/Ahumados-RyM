@@ -30,14 +30,15 @@ class AdminProductController extends Controller
             'image' => 'required|image|max:20480',
         ]);
 
-        $imagePath = $request->file('image')->store('products', 'public');
+        $image = $request->file('image');
+        $imagePath = 'data:' . $image->getMimeType() . ';base64,' . base64_encode(file_get_contents($image->getRealPath()));
 
         Product::create([
             'title' => $validated['title'],
             'description' => $validated['description'],
             'price' => $validated['price'],
             'stock' => $validated['stock'],
-            'image_path' => Storage::url($imagePath),
+            'image_path' => $imagePath,
             'category_id' => 1,
         ]);
 
@@ -65,8 +66,8 @@ class AdminProductController extends Controller
         $product->stock = $validated['stock'];
 
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('products', 'public');
-            $product->image_path = Storage::url($imagePath);
+            $image = $request->file('image');
+            $product->image_path = 'data:' . $image->getMimeType() . ';base64,' . base64_encode(file_get_contents($image->getRealPath()));
         }
 
         $product->save();
