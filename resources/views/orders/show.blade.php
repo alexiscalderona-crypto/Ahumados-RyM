@@ -3,11 +3,16 @@
 @section('title', 'Detalle del Pedido #' . str_pad($order->id, 5, '0', STR_PAD_LEFT))
 
 @section('content')
-<div class="mb-6 flex justify-between items-center">
+<div class="mb-6 flex flex-col md:flex-row justify-between md:items-center gap-4">
     <h1 class="font-headline-lg text-4xl">Pedido #{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}</h1>
-    <a href="{{ route('orders.index') }}" class="text-primary hover:underline font-semibold flex items-center gap-1">
-        <span class="material-symbols-outlined">arrow_back</span> Volver a mis pedidos
-    </a>
+    <div class="flex gap-4 items-center">
+        <a href="{{ route('orders.invoice', $order->id) }}" class="bg-primary text-white px-4 py-2 rounded font-semibold flex items-center gap-2 hover:bg-primary-dark transition">
+            <span class="material-symbols-outlined">picture_as_pdf</span> Descargar Comprobante
+        </a>
+        <a href="{{ route('orders.index') }}" class="text-primary hover:underline font-semibold flex items-center gap-1">
+            <span class="material-symbols-outlined">arrow_back</span> Volver a mis pedidos
+        </a>
+    </div>
 </div>
 
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">

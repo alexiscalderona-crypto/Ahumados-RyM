@@ -79,7 +79,10 @@ Route::delete('cart/{cart}', [CartController::class, 'destroy'])->name('cart.des
 
 // ES: Mapea index (listar pedidos), show (ver detalle), create (checkout) y store (guardar pedido)
 // EN: Maps index (list orders), show (view details), create (checkout) and store (save order)
-Route::resource('orders', OrderController::class)->only(['index', 'show', 'store', 'create'])->middleware('auth');
+Route::middleware('auth')->group(function () {
+    Route::resource('orders', OrderController::class)->only(['index', 'show', 'store', 'create']);
+    Route::get('orders/{order}/invoice', [OrderController::class, 'downloadInvoice'])->name('orders.invoice');
+});
 
 // =========================================================================
 // 6. LIBRO DE RECLAMACIONES / CONTACTO (CLAIMS BOOK / CONTACT)

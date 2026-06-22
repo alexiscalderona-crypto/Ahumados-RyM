@@ -7,7 +7,9 @@ use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\View\View;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OrderController extends Controller
 {
@@ -106,6 +108,22 @@ class OrderController extends Controller
         
         $order->load('items.product');
         return view('orders.show', compact('order'));
+    }
+    /**
+     * Download the order invoice as PDF.
+     */
+    public function downloadInvoice(Order $order)
+    {
+        // Verificar que el pedido pertenezca al usuario o que el usuario sea admin
+        if ($order->user_id !== Auth::id() && Auth::user()->role !== 'admin') {
+            abort(403);
+        }
+
+        $order->load('items.product', 'user');
+
+        $pdf = Pdf::loadView('orders.invoice', compact('order'));
+        
+        return $pdf->download('Comprobante_Pedido_#' . str_pad($order->id, 6, '0', STR_PAD_LEFT) . '.pdf');
     }
 }
 ?>
