@@ -53,31 +53,7 @@
             </form>
             @endif
         </div>
-        
-        <!-- Accordion Detail -->
-        <div class="border-t border-outline/10">
-            <div class="py-4 flex justify-between items-center cursor-pointer group" onclick="toggleDetails('desc-1')">
-                <span class="font-semibold text-lg text-on-surface">Detalles del Proceso</span>
-                <span class="material-symbols-outlined transition-transform group-hover:text-primary" id="icon-1">expand_more</span>
-            </div>
-            <div class="pb-6 text-sm text-on-surface-variant leading-relaxed" id="desc-1">
-                Nuestra técnica se basa en el método tradicional de ahumado. Cada pieza es seleccionada individualmente y curada en seco con sales minerales y especias orgánicas antes de entrar a nuestra cámara de ahumado artesanal.
-            </div>
-        </div>
     </div>
 </div>
 
-<script>
-    function toggleDetails(id) {
-        const el = document.getElementById(id);
-        const icon = document.getElementById('icon-1');
-        if (el.classList.contains('hidden')) {
-            el.classList.remove('hidden');
-            icon.style.transform = 'rotate(180deg)';
-        } else {
-            el.classList.add('hidden');
-            icon.style.transform = 'rotate(0deg)';
-        }
-    }
-</script>
 @endsection
