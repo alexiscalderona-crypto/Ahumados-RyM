@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Ahumados R y M | Premium Smokehouse</title>
+    <title>Ahumados R y M | Carnes Ahumadas Artesanales</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -55,7 +55,24 @@
         <nav class="hidden md:flex items-center gap-8">
             <a class="text-primary font-semibold border-b-2 border-primary font-label-lg" href="{{ url('/') }}">Inicio</a>
             <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg" href="{{ route('products.index') }}">Colección</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg" href="{{ route('claims.create') }}">Contacto</a>
+            <div class="relative group cursor-pointer">
+                <span class="text-on-surface-variant hover:text-primary transition-colors font-label-lg flex items-center gap-1">
+                    Contacto <span class="material-symbols-outlined text-sm">expand_more</span>
+                </span>
+                <div class="absolute left-0 mt-2 w-48 bg-white border border-outline/10 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="{{ route('claims.create') }}" class="block px-4 py-3 text-sm text-on-surface hover:bg-surface-variant/20 hover:text-primary transition-colors">Nuevo Reclamo</a>
+                    @auth
+                        @if(Auth::user()->role !== 'admin')
+                            <a href="{{ route('claims.index') }}" class="block px-4 py-3 text-sm text-on-surface hover:bg-surface-variant/20 hover:text-primary transition-colors border-t border-outline/10">Mis Reclamos</a>
+                        @endif
+                    @endauth
+                </div>
+            </div>
+            @auth
+                @if(Auth::user()->role !== 'admin')
+                    <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg font-bold" href="{{ route('orders.index') }}">Mis Pedidos</a>
+                @endif
+            @endauth
         </nav>
         <div class="flex items-center gap-4">
             @auth
@@ -73,7 +90,7 @@
             @endauth
             
             <a href="{{ route('cart.index') }}" class="bg-primary text-on-primary px-4 py-1.5 rounded-lg font-label-lg hover:bg-primary-container transition-all active:scale-95 flex items-center gap-2">
-                <span class="material-symbols-outlined text-[20px]">shopping_cart</span> Cart
+                <span class="material-symbols-outlined text-[20px]">shopping_cart</span> Carrito
             </a>
         </div>
     </div>
@@ -83,7 +100,7 @@
     <!-- Hero Section -->
     <section class="relative h-[751px] w-full flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0 bg-black">
-            <img alt="Artisanal Smoked Meats" class="w-full h-full object-cover brightness-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8-XfhXyI4K89aUfOZwPPet3MUDrBmnXEmb3TgJsXjR4InuZJ3K3EyfOlUtN9YnJkNkFppSeq4VNX2_ylxkflh_q_0712ldlxNe_SPSdAKqpa1xxxZf1Qa4X3Pt6sLQyCPlr3V3hcHabOhGiGQEGe1qn9ED6tnbozLK3r0Va-rvQpEQ1PZdk1a_i_p7w67ySSzDIHiRbtNwjPrqK_wpos-0S7jg2oALtYEpBbKajSkI2jwDoDbjs9aN4i3SSnWOQ7VWlJiUz9qTkU8"/>
+            <img alt="Carnes Ahumadas Artesanales" class="w-full h-full object-cover brightness-50" src="{{ asset('images/hero_ahumados.png') }}"/>
         </div>
         <div class="relative z-10 text-center px-6 max-w-4xl">
             <h2 class="font-display-lg text-4xl md:text-6xl text-white mb-4 leading-tight font-bold">El auténtico sabor ahumado artesanal</h2>
@@ -161,7 +178,7 @@
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 max-w-7xl mx-auto">
         <div class="col-span-1 md:col-span-1">
             <h4 class="font-headline-sm text-xl font-bold text-on-surface mb-4">Ahumados R y M</h4>
-            <p class="text-on-surface-variant font-body-sm mb-6 italic">"Artisanal Precision in Every Smoke."</p>
+            <p class="text-on-surface-variant font-body-sm mb-6 italic">"Precisión artesanal en cada ahumado."</p>
         </div>
         <div>
             <h5 class="font-label-lg font-bold mb-4">Explorar</h5>
@@ -177,7 +194,7 @@
         </div>
     </div>
     <div class="mt-12 pt-6 border-t border-outline/5 max-w-7xl mx-auto px-6 text-center">
-        <p class="text-on-surface-variant font-body-sm">© 2026 Ahumados R y M. Artisanal Precision in Every Smoke.</p>
+        <p class="text-on-surface-variant font-body-sm">© 2026 Ahumados R y M. Precisión artesanal en cada ahumado.</p>
     </div>
 </footer>
 

@@ -23,8 +23,8 @@
                         <input type="text" name="city" class="w-full border-gray-300 rounded shadow-sm" required>
                     </div>
                     <div>
-                        <label class="block text-gray-700 text-sm font-bold mb-2">Código Postal</label>
-                        <input type="text" name="zip" class="w-full border-gray-300 rounded shadow-sm" required>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Referencia</label>
+                        <input type="text" name="zip" class="w-full border-gray-300 rounded shadow-sm" required placeholder="Ej: Al costado de la bodega Don Pepe">
                     </div>
                 </div>
                 <div class="mb-4">

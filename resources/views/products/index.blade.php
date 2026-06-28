@@ -6,8 +6,8 @@
 <section class="mb-12">
     <div class="flex justify-between items-end mb-8">
         <div>
-            <h1 class="font-headline-lg text-4xl text-on-surface mb-2">Selección del Maestro</h1>
-            <p class="text-on-surface-variant font-body-md">Explora nuestra colección artesanal de carnes y embutidos ahumados.</p>
+            <h1 class="font-headline-lg text-4xl text-on-surface mb-2">Nuestros Productos</h1>
+            <p class="text-on-surface-variant font-body-md">Explora nuestra variedad de carnes y embutidos ahumados artesanalmente.</p>
         </div>
     </div>
 

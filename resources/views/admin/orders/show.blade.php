@@ -94,7 +94,10 @@
                     <div>
                         <p class="text-sm text-gray-500">Dirección de Envío</p>
                         <p class="font-semibold">{{ $order->address ?: 'No proporcionada' }}</p>
-                        <p class="text-sm text-gray-600">{{ $order->city ?: '' }} {{ $order->zip ? '('.$order->zip.')' : '' }}</p>
+                        <p class="text-sm text-gray-600">{{ $order->city ?: '' }}</p>
+                        @if($order->zip)
+                            <p class="text-sm text-gray-600"><span class="font-bold">Ref:</span> {{ $order->zip }}</p>
+                        @endif
                         @if($order->phone)
                             <p class="text-sm text-gray-600 mt-1"><span class="font-bold">Tel:</span> {{ $order->phone }}</p>
                         @endif

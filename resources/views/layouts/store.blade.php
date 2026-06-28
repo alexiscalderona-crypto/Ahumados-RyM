@@ -143,7 +143,7 @@
     <footer class="w-full border-t border-outline/10 bg-surface pt-12 pb-8">
         <div class="text-center px-4 max-w-7xl mx-auto">
             <h3 class="font-headline-sm font-bold text-on-surface mb-4">Ahumados R y M</h3>
-            <p class="font-body-sm text-on-surface-variant max-w-xs mx-auto mb-8">Artisanal Precision in Every Smoke. Dedicados a la maestría culinaria.</p>
+            <p class="font-body-sm text-on-surface-variant max-w-xs mx-auto mb-8">Precisión artesanal en cada ahumado. Dedicados a la maestría culinaria.</p>
             <p class="font-body-sm text-outline-variant">© 2026 Ahumados R y M. Todos los derechos reservados.</p>
         </div>
     </footer>
