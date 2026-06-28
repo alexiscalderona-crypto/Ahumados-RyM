@@ -73,7 +73,7 @@
     <header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-sm">
         <nav class="flex justify-between items-center px-4 md:px-8 py-4 max-w-7xl mx-auto">
             <div class="flex items-center gap-4">
-                <span class="material-symbols-outlined cursor-pointer">menu</span>
+                <span class="material-symbols-outlined cursor-pointer md:hidden" id="mobile-menu-btn">menu</span>
                 <a class="font-headline-sm font-bold tracking-tight text-xl" href="{{ route('products.index') }}">Ahumados R y M</a>
             </div>
             <div class="hidden md:flex gap-8 items-center">
@@ -130,5 +130,32 @@
             <p class="font-body-sm text-outline-variant">© 2026 Ahumados R y M. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-surface/95 backdrop-blur-md z-40 hidden flex-col pt-24 px-8 md:hidden">
+        <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6" href="{{ url('/') }}">Inicio</a>
+        <a class="text-primary font-bold text-2xl mb-6" href="{{ route('products.index') }}">Colección</a>
+        <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6" href="{{ route('claims.create') }}">Contacto</a>
+    </div>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        let menuOpen = false;
+        if(btn) {
+            btn.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                if(menuOpen) {
+                    menu.classList.remove('hidden');
+                    menu.classList.add('flex');
+                    btn.textContent = 'close';
+                } else {
+                    menu.classList.add('hidden');
+                    menu.classList.remove('flex');
+                    btn.textContent = 'menu';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -8,8 +8,9 @@
 @if(count($cart) > 0)
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
     <div class="lg:col-span-2">
-        <div class="bg-white shadow rounded-lg p-6">
-            <table class="w-full text-left">
+        <div class="bg-white shadow rounded-lg p-4 md:p-6">
+            <div class="overflow-x-auto w-full">
+                <table class="w-full text-left min-w-[600px]">
                 <thead>
                     <tr class="border-b">
                         <th class="pb-3 font-semibold">Producto</th>
@@ -54,6 +55,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
         </div>
     </div>
     <div class="lg:col-span-1">

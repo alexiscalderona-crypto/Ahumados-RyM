@@ -14,9 +14,9 @@
 <body class="bg-gray-50 text-gray-900 font-sans">
 
 <header class="fixed top-0 w-full z-50 bg-white border-b border-gray-200">
-    <div class="flex justify-between items-center px-6 py-4">
+    <div class="flex flex-col md:flex-row justify-between items-center px-6 py-4 gap-2">
         <h1 class="text-xl font-bold">Ahumados R y M Admin</h1>
-        <div class="flex gap-4">
+        <div class="flex gap-2 md:gap-4 flex-wrap justify-center">
             <a href="{{ route('admin.dashboard') }}" class="text-gray-600 hover:text-primary">Dashboard</a>
             <a href="{{ route('admin.products.index') }}" class="text-primary font-bold">Productos</a>
             <a href="{{ route('admin.claims.index') }}" class="text-gray-600 hover:text-primary">Reclamos</a>
@@ -32,7 +32,7 @@
     @endif
 
     <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-        <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+        <div class="p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
             <h2 class="text-2xl font-bold">Catálogo de Productos</h2>
             <a href="{{ route('admin.products.create') }}" class="bg-primary text-white px-4 py-2 rounded hover:bg-red-900 transition flex items-center gap-2">
                 <span class="material-symbols-outlined text-[20px]">add</span> Nuevo Producto
