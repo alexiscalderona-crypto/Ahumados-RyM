@@ -150,24 +150,24 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="text-center p-6 group">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-all duration-300">
-                        <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">workspace_premium</span>
+                        <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">local_fire_department</span>
                     </div>
-                    <h3 class="font-headline-sm text-2xl mb-4">Calidad Insuperable</h3>
-                    <p class="text-outline font-body-md text-gray-400">Seleccionamos solo los mejores cortes de animales criados en libertad para garantizar una textura y sabor excepcionales.</p>
+                    <h3 class="font-headline-sm text-2xl mb-4">Ahumado Tradicional</h3>
+                    <p class="text-outline font-body-md text-gray-400">Utilizamos técnicas de ahumado artesanal heredadas de la tradición amazónica, con leña seleccionada que le da a nuestras cecinas y chorizos su sabor característico e inconfundible.</p>
                 </div>
                 <div class="text-center p-6 group">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-all duration-300">
-                        <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">precision_manufacturing</span>
+                        <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">verified</span>
                     </div>
-                    <h3 class="font-headline-sm text-2xl mb-4">Ahumado Lento</h3>
-                    <p class="text-outline font-body-md text-gray-400">Respetamos los tiempos de la naturaleza. Procesos de hasta 72 horas para lograr la profundidad de sabor que nos caracteriza.</p>
+                    <h3 class="font-headline-sm text-2xl mb-4">Cerdo de Primera</h3>
+                    <p class="text-outline font-body-md text-gray-400">Trabajamos únicamente con carne de cerdo fresca y seleccionada de la región San Martín. Cada corte pasa por un riguroso proceso de limpieza, sazonado y preparación antes de llegar a tu mesa.</p>
                 </div>
                 <div class="text-center p-6 group">
                     <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-all duration-300">
-                        <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">local_shipping</span>
+                        <span class="material-symbols-outlined text-primary group-hover:text-white text-3xl">delivery_dining</span>
                     </div>
-                    <h3 class="font-headline-sm text-2xl mb-4">Entrega Gourmet</h3>
-                    <p class="text-outline font-body-md text-gray-400">Nuestros productos viajan en empaques especializados al vacío que mantienen la frescura y el aroma hasta su mesa.</p>
+                    <h3 class="font-headline-sm text-2xl mb-4">Delivery a tu Puerta</h3>
+                    <p class="text-outline font-body-md text-gray-400">Realizamos entregas directas en Tarapoto y alrededores. Haz tu pedido por la web y recibe nuestros productos frescos y listos para preparar en la comodidad de tu hogar.</p>
                 </div>
             </div>
         </div>
