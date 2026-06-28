@@ -15,6 +15,10 @@ class Order extends Model
         'user_id',
         'total',
         'status', // pending, paid, shipped, cancelled
+        'address',
+        'city',
+        'zip',
+        'phone',
     ];
 
     /**

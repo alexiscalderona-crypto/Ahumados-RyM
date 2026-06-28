@@ -15,6 +15,10 @@ return new class extends Migration {
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->decimal('total', 10, 2);
             $table->string('status')->default('pending');
+            $table->text('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('phone')->nullable();
             $table->timestamps();
         });
     }

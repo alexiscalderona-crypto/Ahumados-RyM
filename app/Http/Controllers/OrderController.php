@@ -59,6 +59,10 @@ class OrderController extends Controller
             'user_id' => Auth::id(),
             'total' => $total,
             'status' => 'Pendiente',
+            'address' => $request->input('address', ''),
+            'city' => $request->input('city', ''),
+            'zip' => $request->input('zip', ''),
+            'phone' => $request->input('phone', ''),
         ]);
 
         // ES: 2. Recorremos el carrito y guardamos cada ítem individual en la tabla 'order_items'

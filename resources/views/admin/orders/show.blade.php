@@ -92,9 +92,12 @@
                         <p class="text-sm text-gray-600">{{ $order->user->email }}</p>
                     </div>
                     <div>
-                        <p class="text-sm text-gray-500">Dirección registrada en BD</p>
-                        <p class="font-semibold">Iquitos / Tarapoto</p>
-                        <p class="text-sm text-gray-600">(Se usa la info de su perfil o contacto)</p>
+                        <p class="text-sm text-gray-500">Dirección de Envío</p>
+                        <p class="font-semibold">{{ $order->address ?: 'No proporcionada' }}</p>
+                        <p class="text-sm text-gray-600">{{ $order->city ?: '' }} {{ $order->zip ? '('.$order->zip.')' : '' }}</p>
+                        @if($order->phone)
+                            <p class="text-sm text-gray-600 mt-1"><span class="font-bold">Tel:</span> {{ $order->phone }}</p>
+                        @endif
                     </div>
                 </div>
             </div>
