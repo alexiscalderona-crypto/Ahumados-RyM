@@ -92,10 +92,12 @@
                 <span class="material-symbols-outlined group-hover:text-primary transition-colors">mail</span>
                 <span class="font-label-lg">Reclamos</span>
             </a>
+            <!-- 
             <a class="flex items-center gap-4 p-4 rounded-xl text-on-surface-variant hover:bg-gray-50 transition-all duration-200 group" href="{{ route('admin.production.index') }}">
                 <span class="material-symbols-outlined group-hover:text-primary transition-colors">precision_manufacturing</span>
                 <span class="font-label-lg">Producción</span>
             </a>
+            -->
         </div>
         <div class="mt-auto border-t border-outline/10 pt-4 pb-8">
             <form method="POST" action="{{ route('logout') }}">
