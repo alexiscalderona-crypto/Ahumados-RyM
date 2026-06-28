@@ -109,6 +109,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // ES: Marcar queja como resuelta / EN: Mark a complaint as resolved
     Route::put('claims/{claim}/resolve', [\App\Http\Controllers\Admin\AdminClaimController::class, 'resolve'])->name('claims.resolve');
     
+    // ES: Gestión de pedidos (Ver detalle y actualizar estado) / EN: Order management
+    Route::resource('orders', \App\Http\Controllers\Admin\AdminOrderController::class)->only(['show', 'update']);
+    
     Route::view('production', 'admin.production')->name('production.index');
 });
 

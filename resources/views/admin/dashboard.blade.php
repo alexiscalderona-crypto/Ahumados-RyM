@@ -172,6 +172,7 @@
                             <th class="px-6 py-4 font-semibold">Fecha</th>
                             <th class="px-6 py-4 font-semibold">Monto</th>
                             <th class="px-6 py-4 font-semibold">Estado</th>
+                            <th class="px-6 py-4 font-semibold text-right">Acción</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
@@ -187,11 +188,18 @@
                             <td class="px-6 py-4 text-gray-500 text-sm">{{ $order->created_at->format('M d, Y') }}</td>
                             <td class="px-6 py-4 font-bold text-gray-800">S/. {{ number_format($order->total, 2) }}</td>
                             <td class="px-6 py-4">
-                                @if($order->status == 'pending')
-                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold">Pending</span>
+                                @if($order->status == 'Pendiente')
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold">Pendiente</span>
+                                @elseif($order->status == 'Cancelado')
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-red-100 text-red-800 text-xs font-semibold">Cancelado</span>
                                 @else
-                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">{{ ucfirst($order->status) }}</span>
+                                    <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">{{ $order->status }}</span>
                                 @endif
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <a href="{{ route('admin.orders.show', $order) }}" class="text-primary hover:text-primary-container font-semibold text-sm inline-flex items-center gap-1">
+                                    Ver Detalle <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </a>
                             </td>
                         </tr>
                         @endforeach

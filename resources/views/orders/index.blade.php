@@ -24,12 +24,14 @@
                 <td class="p-4 text-gray-600">{{ $order->created_at->format('d/m/Y H:i') }}</td>
                 <td class="p-4 font-bold">S/. {{ number_format($order->total, 2) }}</td>
                 <td class="p-4">
-                    @if($order->status == 'pending')
+                    @if($order->status == 'Pendiente')
                         <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">Pendiente</span>
-                    @elseif($order->status == 'paid')
-                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">Pagado</span>
+                    @elseif(in_array($order->status, ['Pagado', 'Enviado', 'Entregado']))
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold">{{ $order->status }}</span>
+                    @elseif($order->status == 'Cancelado')
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold">Cancelado</span>
                     @else
-                        <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold">{{ ucfirst($order->status) }}</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold">{{ $order->status }}</span>
                     @endif
                 </td>
                 <td class="p-4">

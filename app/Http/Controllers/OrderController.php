@@ -58,7 +58,7 @@ class OrderController extends Controller
         $order = Order::create([
             'user_id' => Auth::id(),
             'total' => $total,
-            'status' => 'pending', // ES: Estado inicial / EN: Initial state
+            'status' => 'Pendiente',
         ]);
 
         // ES: 2. Recorremos el carrito y guardamos cada ítem individual en la tabla 'order_items'

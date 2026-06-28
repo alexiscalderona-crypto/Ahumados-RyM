@@ -25,12 +25,14 @@
                 </div>
                 <div>
                     <p class="text-sm text-gray-500">Estado</p>
-                    @if($order->status == 'pending')
+                    @if($order->status == 'Pendiente')
                         <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold inline-block mt-1">Pendiente de Pago</span>
-                    @elseif($order->status == 'paid')
-                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold inline-block mt-1">Pagado</span>
+                    @elseif(in_array($order->status, ['Pagado', 'Enviado', 'Entregado']))
+                        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-semibold inline-block mt-1">{{ $order->status }}</span>
+                    @elseif($order->status == 'Cancelado')
+                        <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-semibold inline-block mt-1">Cancelado</span>
                     @else
-                        <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold inline-block mt-1">{{ ucfirst($order->status) }}</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold inline-block mt-1">{{ $order->status }}</span>
                     @endif
                 </div>
             </div>

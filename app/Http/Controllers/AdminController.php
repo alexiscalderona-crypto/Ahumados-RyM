@@ -16,7 +16,7 @@ class AdminController extends Controller
     {
         $orders = Order::with('user')->orderBy('created_at', 'desc')->take(5)->get();
         $totalOrders = Order::count();
-        $totalSales = Order::where('status', 'paid')->sum('total');
+        $totalSales = Order::whereIn('status', ['Pagado', 'Entregado'])->sum('total');
         $lowStock = Product::where('stock', '<', 10)->count();
 
         return view('admin.dashboard', compact('orders', 'totalOrders', 'totalSales', 'lowStock'));
