@@ -79,11 +79,22 @@
             <div class="hidden md:flex gap-8 items-center">
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg" href="{{ url('/') }}">Inicio</a>
                 <a class="text-primary font-semibold border-b-2 border-primary font-label-lg" href="{{ route('products.index') }}">Colección</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg" href="{{ route('claims.create') }}">Contacto</a>
+                <div class="relative group cursor-pointer">
+                    <span class="text-on-surface-variant hover:text-primary transition-colors font-label-lg flex items-center gap-1">
+                        Contacto <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </span>
+                    <div class="absolute left-0 mt-2 w-48 bg-white border border-outline/10 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <a href="{{ route('claims.create') }}" class="block px-4 py-3 text-sm text-on-surface hover:bg-surface-variant/20 hover:text-primary transition-colors">Nuevo Reclamo</a>
+                        @auth
+                            @if(Auth::user()->role !== 'admin')
+                                <a href="{{ route('claims.index') }}" class="block px-4 py-3 text-sm text-on-surface hover:bg-surface-variant/20 hover:text-primary transition-colors border-t border-outline/10">Mis Reclamos</a>
+                            @endif
+                        @endauth
+                    </div>
+                </div>
                 @auth
                     @if(Auth::user()->role !== 'admin')
                         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg font-bold" href="{{ route('orders.index') }}">Mis Pedidos</a>
-                        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg font-bold" href="{{ route('claims.index') }}">Mis Reclamos</a>
                     @endif
                 @endauth
             </div>
@@ -141,11 +152,11 @@
     <div id="mobile-menu" class="fixed inset-0 bg-surface/95 backdrop-blur-md z-40 hidden flex-col pt-24 px-8 md:hidden">
         <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6" href="{{ url('/') }}">Inicio</a>
         <a class="text-primary font-bold text-2xl mb-6" href="{{ route('products.index') }}">Colección</a>
-        <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6" href="{{ route('claims.create') }}">Contacto</a>
+        <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-2" href="{{ route('claims.create') }}">Nuevo Reclamo</a>
         @auth
             @if(Auth::user()->role !== 'admin')
-                <a class="text-on-surface hover:text-primary text-2xl font-bold mb-6" href="{{ route('orders.index') }}">Mis Pedidos</a>
-                <a class="text-on-surface hover:text-primary text-2xl font-bold mb-6" href="{{ route('claims.index') }}">Mis Reclamos</a>
+                <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6 pl-4 border-l-2 border-outline/20" href="{{ route('claims.index') }}">Mis Reclamos</a>
+                <a class="text-on-surface hover:text-primary text-2xl font-bold mb-6 mt-4" href="{{ route('orders.index') }}">Mis Pedidos</a>
             @endif
         @endauth
     </div>
