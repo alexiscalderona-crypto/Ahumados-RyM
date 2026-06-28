@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('subject');
             $table->text('message');
             $table->string('status')->default('pending'); // pending, resolved
+            $table->string('order_reference')->nullable();
+            $table->text('admin_reply')->nullable();
+            $table->longText('image_data')->nullable();
             $table->timestamps();
         });
     }

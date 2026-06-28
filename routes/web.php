@@ -44,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // ES: Eliminar la cuenta de usuario / EN: Delete user account
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // ES: Listar reclamaciones del usuario / EN: List user claims
+    Route::get('/claims', [ClaimController::class, 'index'])->name('claims.index');
 });
 
 // ES: Cargar rutas de autenticación de Laravel Breeze (login, registro, password, etc.)

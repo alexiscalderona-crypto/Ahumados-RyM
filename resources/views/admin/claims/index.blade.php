@@ -52,6 +52,9 @@
                             <div>
                                 <h3 class="font-bold text-lg">{{ $claim->subject }}</h3>
                                 <p class="text-sm text-gray-500">De: {{ $claim->name }} ({{ $claim->email }}) - {{ $claim->created_at->diffForHumans() }}</p>
+                                @if($claim->order_reference)
+                                    <p class="text-sm font-semibold text-primary mt-1">Ref. Pedido: #{{ $claim->order_reference }}</p>
+                                @endif
                             </div>
                             <div>
                                 @if($claim->status == 'pending')
@@ -63,12 +66,28 @@
                         </div>
                         <p class="text-gray-700 mb-4 bg-white p-4 rounded border border-gray-100">{{ $claim->message }}</p>
                         
+                        @if($claim->image_data)
+                            <div class="mb-4">
+                                <p class="font-bold text-sm text-gray-700 mb-2">Evidencia fotográfica adjunta:</p>
+                                <img src="{{ $claim->image_data }}" alt="Evidencia" class="w-48 h-48 object-cover rounded border border-gray-300 shadow-sm cursor-pointer hover:opacity-90" onclick="window.open(this.src, '_blank')">
+                            </div>
+                        @endif
+
                         @if($claim->status == 'pending')
-                        <form action="{{ route('admin.claims.resolve', $claim) }}" method="POST" class="inline">
+                        <form action="{{ route('admin.claims.resolve', $claim) }}" method="POST" class="mt-4 border-t pt-4">
                             @csrf
                             @method('PUT')
-                            <button type="submit" class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-red-900 transition">Marcar como Resuelto</button>
+                            <div class="mb-3">
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Respuesta al Cliente (El cliente lo verá en su panel)</label>
+                                <textarea name="admin_reply" rows="3" class="w-full border-gray-300 rounded shadow-sm focus:ring-primary focus:border-primary" placeholder="Ej: Estimado cliente, enviaremos un motorizado para cambiarle el producto..." required></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary text-white px-4 py-2 rounded text-sm hover:bg-red-900 transition font-bold">Enviar Respuesta y Resolver</button>
                         </form>
+                        @elseif($claim->admin_reply)
+                        <div class="mt-4 border-t pt-4">
+                            <p class="font-bold text-sm text-green-800 mb-1">Tu Respuesta:</p>
+                            <p class="text-gray-700 text-sm bg-white p-3 rounded border border-green-200">{{ $claim->admin_reply }}</p>
+                        </div>
                         @endif
                     </div>
                     @endforeach

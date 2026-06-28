@@ -13,6 +13,9 @@ class Claim extends Model
         'subject',
         'message',
         'status',
+        'order_reference',
+        'admin_reply',
+        'image_data',
     ];
 
     public function user()

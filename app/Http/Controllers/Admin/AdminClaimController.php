@@ -14,9 +14,16 @@ class AdminClaimController extends Controller
         return view('admin.claims.index', compact('claims'));
     }
 
-    public function resolve(Claim $claim)
+    public function resolve(Request $request, Claim $claim)
     {
-        $claim->update(['status' => 'resolved']);
-        return redirect()->back()->with('success', 'Reclamo marcado como resuelto.');
+        $request->validate([
+            'admin_reply' => 'required|string',
+        ]);
+
+        $claim->update([
+            'status' => 'resolved',
+            'admin_reply' => $request->admin_reply,
+        ]);
+        return redirect()->back()->with('success', 'Respuesta enviada y reclamo marcado como resuelto.');
     }
 }

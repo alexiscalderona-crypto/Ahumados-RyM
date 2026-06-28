@@ -11,7 +11,7 @@
             </p>
         </div>
 
-        <form action="{{ route('claims.store') }}" method="POST" class="space-y-6">
+        <form action="{{ route('claims.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -25,14 +25,25 @@
                 </div>
             </div>
 
-            <div>
-                <label for="subject" class="block font-label-lg text-sm text-on-surface-variant mb-2 uppercase">Asunto</label>
-                <input type="text" name="subject" id="subject" required class="w-full bg-surface-container-low border-0 border-b border-outline/20 focus:ring-0 focus:border-primary transition-all py-3 px-4 font-body-md">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="subject" class="block font-label-lg text-sm text-on-surface-variant mb-2 uppercase">Asunto / Motivo</label>
+                    <input type="text" name="subject" id="subject" required class="w-full bg-surface-container-low border-0 border-b border-outline/20 focus:ring-0 focus:border-primary transition-all py-3 px-4 font-body-md">
+                </div>
+                <div>
+                    <label for="order_reference" class="block font-label-lg text-sm text-on-surface-variant mb-2 uppercase">N° de Pedido (Opcional)</label>
+                    <input type="text" name="order_reference" id="order_reference" placeholder="Ej: 00001" class="w-full bg-surface-container-low border-0 border-b border-outline/20 focus:ring-0 focus:border-primary transition-all py-3 px-4 font-body-md">
+                </div>
             </div>
 
             <div>
-                <label for="message" class="block font-label-lg text-sm text-on-surface-variant mb-2 uppercase">Mensaje</label>
+                <label for="message" class="block font-label-lg text-sm text-on-surface-variant mb-2 uppercase">Mensaje o Detalle</label>
                 <textarea name="message" id="message" rows="5" required class="w-full bg-surface-container-low border-0 border-b border-outline/20 focus:ring-0 focus:border-primary transition-all py-3 px-4 font-body-md resize-none"></textarea>
+            </div>
+
+            <div>
+                <label for="image" class="block font-label-lg text-sm text-on-surface-variant mb-2 uppercase">Adjuntar Evidencia (Foto del producto - Opcional)</label>
+                <input type="file" name="image" id="image" accept="image/*" class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-all font-body-md">
             </div>
 
             <button type="submit" class="w-full bg-primary text-white font-label-lg py-4 px-6 hover:bg-primary-container transition-all active:scale-95 uppercase tracking-widest font-bold">
