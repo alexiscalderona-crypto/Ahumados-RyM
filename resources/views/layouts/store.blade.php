@@ -83,6 +83,7 @@
                 @auth
                     @if(Auth::user()->role !== 'admin')
                         <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg font-bold" href="{{ route('orders.index') }}">Mis Pedidos</a>
+                        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg font-bold" href="{{ route('claims.index') }}">Mis Reclamos</a>
                     @endif
                 @endauth
             </div>
@@ -144,6 +145,7 @@
         @auth
             @if(Auth::user()->role !== 'admin')
                 <a class="text-on-surface hover:text-primary text-2xl font-bold mb-6" href="{{ route('orders.index') }}">Mis Pedidos</a>
+                <a class="text-on-surface hover:text-primary text-2xl font-bold mb-6" href="{{ route('claims.index') }}">Mis Reclamos</a>
             @endif
         @endauth
     </div>
