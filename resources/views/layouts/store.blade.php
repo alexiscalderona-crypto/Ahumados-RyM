@@ -80,6 +80,11 @@
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg" href="{{ url('/') }}">Inicio</a>
                 <a class="text-primary font-semibold border-b-2 border-primary font-label-lg" href="{{ route('products.index') }}">Colección</a>
                 <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg" href="{{ route('claims.create') }}">Contacto</a>
+                @auth
+                    @if(Auth::user()->role !== 'admin')
+                        <a class="text-on-surface-variant hover:text-primary transition-colors font-label-lg font-bold" href="{{ route('orders.index') }}">Mis Pedidos</a>
+                    @endif
+                @endauth
             </div>
             <div class="flex items-center gap-4">
                 @auth
@@ -136,6 +141,11 @@
         <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6" href="{{ url('/') }}">Inicio</a>
         <a class="text-primary font-bold text-2xl mb-6" href="{{ route('products.index') }}">Colección</a>
         <a class="text-on-surface hover:text-primary text-2xl font-semibold mb-6" href="{{ route('claims.create') }}">Contacto</a>
+        @auth
+            @if(Auth::user()->role !== 'admin')
+                <a class="text-on-surface hover:text-primary text-2xl font-bold mb-6" href="{{ route('orders.index') }}">Mis Pedidos</a>
+            @endif
+        @endauth
     </div>
 
     <script>
