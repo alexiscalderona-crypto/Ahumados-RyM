@@ -30,7 +30,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $cecinas->id,
             'title'       => 'Cecina Pierna',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'La cecina es un producto tradicional de la gastronomía amazónica peruana, elaborado a partir de carne de cerdo seleccionada. El proceso de preparación consiste en el salado y sazonado de la carne, seguido de un proceso de ahumado natural que le otorga su característico aroma, sabor y color. Posteriormente, la carne es cocida o frita para su consumo. Es uno de los acompañamientos más representativos de la cocina selvática y suele servirse con tacacho, plátano asado o yuca.',
             'price'       => 38.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -40,7 +40,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $cecinas->id,
             'title'       => 'Cecina Lomo',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Elaborada con cortes de lomo fino de cerdo cuidadosamente seleccionados. Su preparación incluye el adobado y ahumado artesanal, obteniendo una carne tierna, jugosa y de exquisito sabor.',
             'price'       => 40.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -50,7 +50,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $carnes->id,
             'title'       => 'Costilla',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'La costilla de cerdo es un corte seleccionado que se prepara mediante un cuidadoso proceso de adobado con especias y condimentos naturales. Posteriormente, se cocina a la parrilla, frita o al horno, obteniendo una carne tierna, jugosa y de excelente sabor. Es un producto muy apreciado en la gastronomía regional por su calidad y valor nutritivo.',
             'price'       => 38.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -60,7 +60,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $derivados->id,
             'title'       => 'Chorizo',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'El chorizo amazónico es un embutido artesanal elaborado con carne de cerdo fresca, grasa seleccionada y una mezcla especial de condimentos naturales. La preparación incluye el picado de la carne, el sazonado y el embutido en tripa natural. Posteriormente, puede ser ahumado o cocinado según la tradición local. Destaca por su sabor intenso y su textura jugosa, siendo un complemento ideal para el tacacho y otros platos típicos de la Amazonía.',
             'price'       => 38.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -70,7 +70,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $carnes->id,
             'title'       => 'Patitas',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Las patitas de cerdo son un producto tradicional elaborado a partir de patas de cerdo previamente seleccionadas y sometidas a un proceso de limpieza, cocción y sazonado. Su preparación resalta la textura gelatinosa característica del colágeno natural, convirtiéndolas en una opción muy valorada dentro de la cocina amazónica y peruana.',
             'price'       => 18.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -80,7 +80,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $carnes->id,
             'title'       => 'Huesitos Cadera',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Huesos de cerdo seleccionados y procesados higiénicamente, ideales para la preparación de caldos, sopas y guisos, aportando sabor y consistencia a las comidas.',
             'price'       => 15.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -90,7 +90,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $carnes->id,
             'title'       => 'Huesitos Piernas',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Huesos de cerdo seleccionados y procesados higiénicamente, ideales para la preparación de caldos, sopas y guisos, aportando sabor y consistencia a las comidas.',
             'price'       => 10.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -100,7 +100,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $otros->id,
             'title'       => 'Cuero',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'El cuero de cerdo es un producto obtenido de la piel del cerdo, cuidadosamente procesada mediante limpieza, cocción y sazonado. Dependiendo de la preparación, puede consumirse cocido, frito o como complemento de diversos platos típicos. Se caracteriza por su textura particular y su aporte de sabor a la gastronomía tradicional amazónica.',
             'price'       => 14.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -110,7 +110,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $otros->id,
             'title'       => 'Menudencias',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Conjunto de partes seleccionadas del cerdo, procesadas bajo estrictas condiciones de higiene. Muy utilizadas en la gastronomía regional por su sabor y valor nutritivo.',
             'price'       => 16.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -120,7 +120,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $otros->id,
             'title'       => 'Oreja',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Producto cuidadosamente seleccionado y preparado mediante procesos de limpieza y cocción. Destaca por su textura firme y su apreciado sabor tradicional.',
             'price'       => 18.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -130,7 +130,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $derivados->id,
             'title'       => 'Chicharrón',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Preparado a partir de carne y grasa de cerdo de alta calidad, cocinadas hasta obtener una textura crujiente y un sabor inconfundible. Ideal para desayunos y platos típicos de la región; Infalible en la preparación del tacacho regional.',
             'price'       => 30.00,
             'stock'       => 100,
             'image_path'  => null,
@@ -140,7 +140,7 @@ class RealProductsSeeder extends Seeder
         Product::create([
             'category_id' => $otros->id,
             'title'       => 'Manteca',
-            'description' => 'Pendiente - Agregar descripción desde el panel admin',
+            'description' => 'Grasa de cerdo procesada de forma tradicional, utilizada como ingrediente culinario para aportar sabor y textura a diversas preparaciones gastronómicas, cabe recalcar que también es uno de los ingredientes infaltables en la preparación del tacacho regional.',
             'price'       => 20.00,
             'stock'       => 100,
             'image_path'  => null,
