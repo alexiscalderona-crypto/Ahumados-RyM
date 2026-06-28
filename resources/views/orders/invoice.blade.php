@@ -21,9 +21,12 @@
 <body>
 
     <div class="header">
-        <div class="logo">Ahumados R y M</div>
-        <div class="slogan">Tradición y sabor artesanal en cada corte</div>
-        <p>RUC: 20123456789 | Av. Los Ahumadores 123, Lima, Perú</p>
+        <div class="logo">Ahumados R & M</div>
+        <div class="slogan" style="font-weight: bold; margin-bottom: 3px; color: #333;">De: Miranda Amasifuen Amasifuen</div>
+        <div class="slogan" style="font-size: 10px; margin-bottom: 8px;">VENTA DE CHORIZO, CECINA Y TODOS SUS DERIVADOS AL POR MAYOR Y MENOR</div>
+        <p style="font-size: 10px; margin: 2px 0;">JR. VENCEDORES DE COMAINAS S/N - MERCADO N°03, PTO. 15-16</p>
+        <p style="font-size: 10px; margin: 2px 0;">SAN MARTIN - SAN MARTIN - TARAPOTO | CEL.: 926 306 631 / 928 978 807</p>
+        <p style="font-size: 12px; font-weight: bold; margin-top: 5px;">R.U.C. 10442082702</p>
     </div>
 
     <div class="info-section">
