@@ -53,10 +53,10 @@
             <!-- Yape Section -->
             <div id="yape-section" class="hidden mt-4 p-4 border border-purple-200 bg-purple-50 rounded-lg">
                 <h3 class="font-bold text-purple-800 mb-2">Instrucciones de Pago:</h3>
-                <p class="text-sm text-gray-700 mb-4">1. Escanea el código QR o transfiere al número <strong>987 654 321</strong> (Titular: Ahumados R y M).</p>
+                <p class="text-sm text-gray-700 mb-4">1. Escanea el código QR o transfiere al número <strong>918 683 254</strong> (Titular: Ahumados R y M).</p>
                 <div class="flex justify-center mb-4">
-                    <div class="w-32 h-32 bg-purple-200 border-2 border-dashed border-purple-400 flex items-center justify-center rounded-lg">
-                        <span class="text-purple-600 font-bold text-sm text-center">Código QR<br>de Yape</span>
+                    <div class="w-32 h-32 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-sm border border-gray-200">
+                        <img src="{{ asset('img/qr_yape.png') }}" alt="QR de Yape" class="w-full h-full object-contain">
                     </div>
                 </div>
                 <p class="text-sm text-gray-700 mb-2">2. Adjunta la captura de pantalla de tu transferencia:</p>
